@@ -7,12 +7,12 @@ Spree::Api::StockLocationsController.class_eval do
 
   def supplier_locations
     params[:q] ||= {}
-    params[:q][:supplier_id_eq] = spree_current_user.supplier_id
+    params[:q][:supplier_id_eq] = current_api_user.supplier_id
   end
 
   def supplier_transfers
     params[:q] ||= {}
-    params[:q][:supplier_id_eq] = spree_current_user.supplier_id
+    params[:q][:supplier_id_eq] = current_api_user.supplier_id
   end
 
 end
