@@ -57,7 +57,7 @@ feature 'Admin - Product Stock Management', js: true do
       visit current_path
 
       find('#listing_stock_locations').should have_content("NY Warehouse")
-      within_row(2) { click_icon :trash }
+      within_row(2) { click_icon :delete }
       page.driver.browser.switch_to.alert.accept
       # Wait for API request to complete.
       sleep(1)
@@ -90,7 +90,7 @@ feature 'Admin - Product Stock Management', js: true do
       uncheck "Active"
       click_button "Update"
 
-      find('#listing_stock_locations').should have_content("INACTIVE")
+      find('#listing_stock_locations').should have_content("Inactive")
     end
 
   end
